@@ -1,0 +1,10 @@
+File simple-input-reverse.txt found
+File simple-output-reverse.txt found
+======================================
+All files are present in folder. Good!
+======================================
+Deleting listwrapper
+Deleting object files
+make: ran successfully
+Error: Executable listwrapper is not created by running command make
+FAIL

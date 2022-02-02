@@ -1,0 +1,62 @@
+README for HW4: Six Degrees of Kevin Bacon
+CSE 101 - Fall 2021
+
+Andrew Lim, November 2021
+
+----------------------------------------------------------------------------
+
+Code files: sixdegrees.cpp, Makefile
+Test files: simple-input.txt, simple-output.txt, Test/*.txt
+Extra files: README, /bfs_six_degrees.pdf
+
+sixdegrees.cpp: The main file of the project. The main function handles
+input/output of queries passed via text files, creation of a graph that
+contains common relations between two actors based on what movies they 
+premiered in, and creating the shortest path between two actors via a 
+BFS method.
+
+Makefile: This file will create an executable (sixdegrees) that will compile
+the following files: sixdegrees.cpp. Usage is described in more details down
+below
+
+----------------------------------------------------------------------------
+
+This assignment utilizes an undirected graph via a custom class called
+ActorNodes to determine the shortest path between two actors using BFS.
+Not every input, however, will produce a path, as there might be cases
+where the actors aren't in the graph, the two actors given are the same,
+or a path doesn't exist.
+
+----------------------------------------------------------------------------
+
+USAGE:
+1) Run "make" to get the executable "sixdegrees"
+2) Run "./sixdegrees <INPUT FILE> <OUTPUT FILE>"
+
+Each line of INPUT file should contain a line of the following forms
+(information from bfs_six_degrees.pdf)
+<ACTOR1> <ACTOR2>
+
+Each line of OUTPUT file should contain a shortest path between the actors,
+or output an error message if 
+1. Either <ACTOR1> or <ACTOR2> are not present in the data
+2. There is no path between <ACTOR1> or <ACTOR2>
+3. If <ACTOR1> is the same as <ACTOR2>
+
+
+----------------------------------------------------------------------------
+
+REFERENCES:
+* Algorithm for BFS was adapted via a combination of lecture materials on
+BFS and (Wikipedia)[https://en.wikipedia.org/wiki/Breadth-first_search]
+* Tokenizing input via stringstream and ifstream: (StackOverflow)
+[https://stackoverflow.com/questions/11719538/how-to-use-stringstream-
+to-separate-comma-separated-strings]
+* Static class members refernece: (tutorialspoint)
+[https://www.tutorialspoint.com/cplusplus/cpp_static_members.htm]
+* C++ tuple data type reference: (cplusplus.com)
+[https://www.cplusplus.com/reference/tuple/]
+* C++ reverse algorithm reference: (cplusplus.com)
+[https://www.cplusplus.com/refernece/algorithm/reverse]
+* General structure of README and Makefile are from previous
+homework assignments
