@@ -1,0 +1,78 @@
+README for HW1: A Dramatic Analysis assignment, CSE101 - Fall 2021
+
+Andrew Lim, October 2021
+-----------------------------------------------------------------------------------
+
+Code files: Makefile, bard.cpp, linkedlist.cpp, linkedlist.h
+Test files: simple-input.txt, simple-output.txt, Tests/more-input.txt, 
+            Tests/more-output.txt
+Extra files; README, hw_shakespeare.pdf, shakespeare-cleaned5.txt
+
+linkedlist.h, linkedlist.cpp: These files have the logic and framework for a custom
+built LinkedList. linkedlist.cpp, in particular, has more advanced functions that
+are not present in Professor Sesh's base Linked List implementation that sort,
+remove duplicate nodes, and swap data values to name a few functions.
+
+bard.cpp: The main file of the project. The main function handles input/output
+of queries passed via text file, instantiations of the array of LinkedLists to hold
+all of Shakespeare's cleaned text, and error handling for the input queries.
+
+Makefile: This file will create an executable (bard) that will compile the following
+file: bard.cpp, linkedlist.cpp, linkedlist.h. Usage is described in more detail down
+below.
+
+-----------------------------------------------------------------------------------
+
+This assignment integrates the concepts of Linked Lists and efficient sorting 
+implementation to parse all of Shakespeares composition in an efficient and 
+timely manner. Look into hw_shakespeare.pdf for more detailed instructions.
+
+-----------------------------------------------------------------------------------
+
+USAGE:
+1) Run "make", to get the executuable "bard"
+2) Run "./bard <INPUT FILE> <OUTPUT FILE>"
+
+Each line of INPUT FILE should contain a pair of query numbers: LENGTH RANK.
+From hw_shakespeare.pdf: "The first number is the length of the word, the
+second number is the rank, which starts from 0. The ranking is done in decreasing
+order of frequency, and increasing lexicographic order"
+
+Each corresponding line of OUTPUT FILE either outputs a word that corresponds to 
+the LENGTH and RANK given in the input file. If no word is found or the query
+numbers are invalid, the line will contain '-'.
+
+-----------------------------------------------------------------------------------
+
+IMPORTANT:
+
+Since the Bubble Sort that is implemented puts the min elements in the Linked List
+at the beginning and the max elements at the top, I have implemented a LinkedList ::
+reverse() class method to reverse the direction of the LinkedList. After the
+reversal, the Linked List will in proper order (decreasing order of frequency and
+increasing lexicographic order).
+
+-----------------------------------------------------------------------------------
+
+REFERENCES: 
+
+* Bubble sort algorithm for Nodes (utilitzed in linkedlist.cpp LinkedList :: sort()
+to sort the LinkedList by frequency/lexicographic order) [GeeksForGeeks]
+(https://www.geeksforgeeks.org/bubble-sort-for-linked-list-by-swapping-nodes/)
+* Relationship operators for strings (utilized in linkedlist.cpp LinkedList :: sort()
+to compare the string values of two nodes) - [cplusplus]
+(https://www.cplusplus.com/reference/string/string/operators)
+* Inut/output syntax and methods for reading/writing to external text files -
+[cplusplus] (https://www.cplusplus.com/doc/tutorial/files), [Stack Overflow]
+(https://stackoverflow.com/questions/7868936/read-file-line-by-line-using-ifstream-in-c)
+* Lexicographic Ascending/Descending Sort Visualizer - [Knowledge Walls]
+(https://tools.knowledgewalls.com/online-lexicographic-ascending-or-descending-sort)
+* Passing Reference to a Pointer in C++ (utilized in linkedlist.cpp LinkedList ::
+swapWords(Node*&, Node*&) and LinkedList :: swapFrequencies(Node*&, Node*&) class methods)
+[GeeksForGeeks] (https://www.geeksforgeeks.org/passing-reference-to-a-pointer-in-c)
+* LinkedList :: reverseNode(Node*) was demonstrated in a CSE 101 Lecture in an introduction
+to the Linked List ADT and implementation was reviewed through Medium - [Medium]
+(https://medium.com/the-core/how-to-recursively-reverse-a-linked-list-9990d59fc13f)
+* linkedlist.h and linkedlist.cpp were originally created by Japheth Frolick (Aug 2019) and
+C. Seshadhri (Jan 2020), and has been imported from a Codio box with starting code to
+seamlessly set up a Linked List object
