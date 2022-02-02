@@ -1,0 +1,14 @@
+# Spec file for Hello test assignment of CSE101, WInter 2020
+#
+#################
+f1: Makefile
+f2: README
+c1: make
+e1: hello
+p1: ./hello
+t1: test-input1.txt
+o1: test-output1.txt
+i1: ideal-output1.txt
+t2: test-input2.txt
+o2: test-output2.txt
+i2: ideal-output2.txt

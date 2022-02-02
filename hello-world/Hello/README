@@ -1,0 +1,25 @@
+README for test Hello assignment, CSE101
+
+C. Seshadhri, Jan 2020
+-----------------------------------------------------
+
+Code files: Makefile, hello.cpp, utils.cpp, utils.h
+Test files: test-input1.txt, test-input2.txt, ideal-output1.txt, ideal-output2.txt
+Extra files: README, hello-instr.pdf
+
+----------------------------------------------------
+
+This is a simple test assignment, to understand the overall pipeline we will follow
+in our assignments. Look into hello-instr.pdf for more detailed instructions.
+
+----------------------------------------------------
+
+USAGE: 
+1) Run "make", to get executable "hello".
+2) Run "./hello <INPUT FILE> <OUTPUT FILE>"
+
+Each line of INPUT FILE should have a non-negative integer. (If a line does not have such an integer, it is interpreted as zero.)
+Each corresponding line of OUTPUT FILE has "Hello world", printed that many times (with a space in between).
+
+ 
+
