@@ -1,0 +1,75 @@
+README for HW 3: Range searching with AVL trees
+CSE 101 - Fall 2021
+
+Andrew Lim, November 2021
+-----------------------------------------------------------------------------------
+
+Code files: bst.cpp, bst.h, Makefile, wordrange.cpp
+Test files: simple-input.txt, simple-output.txt, Tests/*.txt
+Extra files: README, /range_queries_avl.pdf
+
+bst.cpp, bst.h: These files have the logic and framework for a Binary Search Tree
+with common functions such as insert, find, delete, and tree traversals. 
+
+wordrange.cpp: The main file of the project. The main function handles input/output
+of queries passed via text file, insert/range queries of the BST based on the
+queries, and error handling if inputs are invalid.
+
+Makefile: This file wlil create an executable (wordrange) that will compile the
+following files: wordrange.cpp, bst.cpp, bst.h. Usage is described in more detail
+down below
+-----------------------------------------------------------------------------------
+
+This assignment utilizes a Binary Search Tree (BST) to parse a given input file
+and determine how many elements are between two values, val1 and val2. This attempt
+is for 5 points, which is too simply code up a standard BST and range searching
+by reading the entire tree. Look into range_queries_avl.pdf for more details
+instructions
+
+-----------------------------------------------------------------------------------
+
+USAGE:
+1) Run "make" to get the executable "wordrange"
+2) Run "./wordrange <INPUT FILE> <OUTPUT FILE>"
+
+Each line of INPUT FILE should contain a line of the following forms (information
+from range_queries_avl.pdf):
+1. i <STRING>
+or
+2. r <STRING1> <STRING2>
+The first line means insert the string into the BST. If the string is already
+present, do not insert again. The second line means count the numebr of string
+(currently) stored that are lexicographically between STRING1 and STRING2.
+
+Each line of OUTPUT FILE should be a range size to a corresponding range queries.
+
+-----------------------------------------------------------------------------------
+
+IMPORTANT:
+The implementation in ./wordrange is the 5 point attempt, which only utilizes a 
+standard BST, NOT an AVL tree. There are functions commented out that attempt to
+integrate an AVL tree in bst.cpp and bst.h.
+
+-----------------------------------------------------------------------------------
+
+REFERENCES:
+
+* bst.cpp and bst.h were originally created by C. Seshadhri (Jan 2020), and has
+been imported from a Codio box with starting code to implement a simple BST
+* wordrange.cpp: input/output parsing was referenced from HW 2 nqueens without
+recursion assignment and BST codes treewrapper.cpp Codio box
+* wordrange.cpp: fixing memory leak caused by strdup (Cprogramming.com)
+[https://cboard.cprogramming.com/c-programming/151914-strdup-leaks.html]
+* bst.cpp: numItemsInRange(Node* start, string val1, string val2, int&) string
+lexicographic comparison reference: (cplusplus.com)
+[https://cpluplus.com/reference/string/string/operators]
+* AVL Tree review: (tutorialspoint)
+[https://tutorialspoint.com/data_structures_algorithms/avl_tree_algorithm.htm]
+* AVL Insertion process: (Wikipedia)[https://en.wikipedia.org/wiki/AVL_tree]
+* Print function to visualize what the tree would look like: (Stack Overflow)
+[https://stackoverflow.com/questions/4965335/how-to-print-binary-tree-diagram-in-java
+/42449385#42449385] - solution by Nitin K
+* AVL Insertion Rotation Cases: (usna.edu)
+[https://www.usna.edu/Users/cs/crabbe/UC312/current/units/05/avl.html]
+* AVL Tree Visualization: [https://www.cs.usfca.edu/~galles/visualization/AVLtree.html]
+* README Formatting from hw1-a-dramatic-analysis
